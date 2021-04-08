@@ -72,6 +72,7 @@ int mosquitto_lib_init(void)
 #else
 		struct timeval tv;
 
+		// comment by Clark::   ::2021-3-29
 		gettimeofday(&tv, NULL);
 		srand(tv.tv_sec*1000 + tv.tv_usec/1000);
 #endif
@@ -88,6 +89,7 @@ int mosquitto_lib_init(void)
 
 int mosquitto_lib_cleanup(void)
 {
+	// comment by Clark:: 引用数量  ::2021-3-29
 	if (init_refcount == 1) {
 		net__cleanup();
 	}

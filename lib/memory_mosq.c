@@ -59,6 +59,13 @@ void *mosquitto__calloc(size_t nmemb, size_t size)
 
 #ifdef REAL_WITH_MEMORY_TRACKING
 	if(mem){
+		// comment by Clark:: malloc_usable_size 实际分配的内存大小  ::2021-3-29
+		/* 
+			comment by Clark:: The value returned by malloc_usable_size() may be greater than the requested size of the allocation because of alignment  and  minimum  size  con‐
+       straints.   Although the excess bytes can be overwritten by the application without ill effects, this is not good programming practice: the number
+       of excess bytes in an allocation depends on the underlying implementation.  
+       ::2021-3-29
+       */
 		memcount += malloc_usable_size(mem);
 		if(memcount > max_memcount){
 			max_memcount = memcount;

@@ -66,6 +66,7 @@
 #  define _Float128 uint64_t
 #endif
 
+// comment by Clark:: 避免编译时的警告  ::2021-3-29
 #define UNUSED(A) (void)(A)
 
 /* Android Bionic libpthread implementation doesn't have pthread_cancel */

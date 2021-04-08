@@ -72,6 +72,7 @@ WITH_WEBSOCKETS:=no
 # Use elliptic keys in broker
 WITH_EC:=yes
 
+# comment by Clark::  默认选项, 若在命令行指定时, 则覆盖此选项 ::2021-3-29
 # Build man page documentation by default.
 WITH_DOCS:=yes
 
